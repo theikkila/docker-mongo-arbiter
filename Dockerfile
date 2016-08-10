@@ -25,6 +25,9 @@ ENV MONGO_VERSION 3.2.6
 
 RUN echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/$MONGO_MAJOR main" > /etc/apt/sources.list.d/mongodb-org.list
 
+
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+
 RUN set -x \
 	&& apt-get update \
 	&& apt-get install -y mongodb-org=$MONGO_VERSION \
